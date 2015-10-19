@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/*!
+- - - - - - - - - - - - - - - - - - - - - - -
+THEME NAME
+Graphic design: Ranno Ait
+Front-end: Ranno Ait
+Back-end: Ranno Ait
+
+Tallinn, Estonia 2015
+- - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+
+/**	MAIN
+***	- - - - - - - - - - - - - - - - - - - - */
+
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.ratio-box {
+    position: relative;
+    height: 0;
+    display: block;
+    width: 100%;
+    /* padding-bottom is calculated and rendered into HTML */
+}
+
+.ratio-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/**	- - - - - - - - - - - - - - - - - - - - */
+
+
+/**	LINKS
+***	- - - - - - - - - - - - - - - - - - - - */
+/**	- - - - - - - - - - - - - - - - - - - - */
+
+
+/**	TYPOGRAPHY
+***	- - - - - - - - - - - - - - - - - - - - */
+/**	- - - - - - - - - - - - - - - - - - - - */
+
+/**	NAVIGATION
+***	- - - - - - - - - - - - - - - - - - - - */
+/**	- - - - - - - - - - - - - - - - - - - - */

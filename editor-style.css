@@ -1,0 +1,8 @@
+body#tinymce.wp-editor { 
+	font-family: Times New Roman, "Times", serif;
+	font-style: normal;
+}
+
+body#tinymce.wp-editor p {
+	margin: 0;
+}
