@@ -38,6 +38,7 @@ add_action( 'admin_menu', 'remove_menu_pages' );
 /*
 **  - - - - - - - - - - - - - - - - - - - - - -
 **  Sitemap for Grunt
+**  (need to think how to make this work on Gulp)
 **  - - - - - - - - - - - - - - - - - - - - - -
 */
 function show_sitemap() {

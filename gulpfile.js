@@ -14,7 +14,7 @@ var livereload = require('gulp-livereload');
 gulp.task('uncss', function() {
     gulp.src('stylesheets/style.css')
         .pipe(uncss({
-            html: ["http:\/\/localhost\/gulp-theme-dev\/2015\/10\/15\/hello-world\/","http:\/\/localhost\/gulp-theme-dev\/sample-page\/"],
+            html: ["enter, http://'s, here'"],
             ignore: [
                 // Lazysizes
                 "lazyload",
@@ -31,9 +31,8 @@ gulp.task('uncss', function() {
 // Concat JS & Uglify
 gulp.task('scripts', function() {
   gulp.src([
-      /*
-      JQuery will be included through functions.php,
-      to reduce plugin conflicts.
+      /**
+      * JQuery will be included through functions.php, to reduce plugin conflicts.
       */
       'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
       'bower_components/lazysizes/lazysizes.min.js',
