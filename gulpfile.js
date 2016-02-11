@@ -4,7 +4,7 @@ var gulp = require('gulp');
 // Include plugins
 var uncss = require('gulp-uncss');
 var rename = require('gulp-rename');
-var minifyCss = require('gulp-minify-css');
+var cssnano = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var livereload = require('gulp-livereload');
@@ -14,7 +14,7 @@ var livereload = require('gulp-livereload');
 gulp.task('uncss', function() {
     gulp.src('stylesheets/style.css')
         .pipe(uncss({
-            html: ["enter, http://'s, here'"],
+            html: ["http://www.neti.ee"],
             ignore: [
                 // Lazysizes
                 "lazyload",
@@ -25,6 +25,7 @@ gulp.task('uncss', function() {
         .pipe(rename({
             suffix: '.min'
         }))
+        .pipe(cssnano())
         .pipe(gulp.dest('stylesheets'));
 });
 
