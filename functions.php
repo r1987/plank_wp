@@ -218,14 +218,14 @@ add_action('wp_enqueue_scripts', 'enqueue_plank_styles');
 **	RETINA IMAGES GENERATOR
 **	- - - - - - - - - - - - - - - - - - - - - -
 */
-require_once(TEMPLATEPATH . '/includes/retina-images-generator.php');
+// require_once(TEMPLATEPATH . '/includes/retina-images-generator.php');
 
 /*
 **	- - - - - - - - - - - - - - - - - - - - - -
 **	LAZYSIZES IMAGES
 **	- - - - - - - - - - - - - - - - - - - - - -
 */
-require_once(TEMPLATEPATH . '/includes/lazy-images.php');
+// require_once(TEMPLATEPATH . '/includes/lazy-images.php');
 
 
 /*
@@ -233,5 +233,5 @@ require_once(TEMPLATEPATH . '/includes/lazy-images.php');
 **  PLUGIN: Gallery Metabox
 **  - - - - - - - - - - - - - - - - - - - - - -
 */
-require_once(TEMPLATEPATH . '/includes/gallery-metabox/gallery.php');
+// require_once(TEMPLATEPATH . '/includes/gallery-metabox/gallery.php');
 ?>

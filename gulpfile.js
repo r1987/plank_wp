@@ -8,13 +8,17 @@ var cssnano = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var livereload = require('gulp-livereload');
+var shell = require('gulp-shell');
 
+// Generate Sitemap JSON
+gulp.task('sitemap', shell.task(['curl --silent --output sitemap.json http://localhost/current-obsession.com/\?show_sitemap']));
 
 // Uncss
 gulp.task('uncss', function() {
     gulp.src('stylesheets/style.css')
         .pipe(uncss({
-            html: ["http://www.neti.ee"],
+            // html: ["http://www.neti.ee"],
+            html: JSON.parse(require('fs').readFileSync('sitemap.json', 'utf-8')),
             ignore: [
                 // Lazysizes
                 "lazyload",
@@ -67,3 +71,8 @@ gulp.task('watch', function() {
     // Watch image files
     gulp.watch('images/**/*', ['images']);
  });
+
+ // Build
+ gulp.task('build', ['sitemap', 'uncss', 'scripts'], function (){
+   console.log('Building files');
+ })
