@@ -11,7 +11,7 @@ var livereload = require('gulp-livereload');
 var shell = require('gulp-shell');
 
 // Generate Sitemap JSON
-gulp.task('sitemap', shell.task(['curl --silent --output sitemap.json http://localhost/current-obsession.com/\?show_sitemap']));
+gulp.task('sitemap', shell.task(['curl --silent --output sitemap.json http://localhost/mysitename/\?show_sitemap']));
 
 // Uncss
 gulp.task('uncss', function() {
@@ -20,7 +20,11 @@ gulp.task('uncss', function() {
             // html: ["http://www.neti.ee"],
             html: JSON.parse(require('fs').readFileSync('sitemap.json', 'utf-8')),
             ignore: [
-                // Lazysizes
+                /\w\.in/,
+                ".collapse",
+                ".collapsing",
+                ".collapsed",
+                ".open",
                 "lazyload",
                 "lazyloading",
                 "lazyloaded"

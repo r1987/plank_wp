@@ -213,6 +213,42 @@ add_action('wp_enqueue_scripts', 'enqueue_plank_styles');
 //   return $newsizes;
 // }
 
+
+/*
+**	- - - - - - - - - - - - - - - - - - - - - -
+**	SHARE BUTTONS
+**	- - - - - - - - - - - - - - - - - - - - - -
+*/
+function share_buttons() {
+	if(is_singular() || is_home()){
+
+		$permalink = get_permalink();
+
+		// Get current page title
+		$post_title = str_replace( ' ', '%20', get_the_title());
+
+		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+
+		$twitterURL = 'https://twitter.com/intent/tweet?text='.$post_title.'&amp;url='.$permalink.'&amp;via=Twitter Name';
+		$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$permalink;
+		$googleURL = 'https://plus.google.com/share?url='.$permalink;
+		$pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$permalink.'&amp;media='.$thumbnail[0].'&amp;description='.$post_title;
+
+        $content .= '<span>Share: </span>';
+		$content .= '<a class="icon-twitter-with-circle" href="'. $twitterURL .'" target="_blank">Twitter</a>';
+		$content .= '<a class="icon-facebook-with-circle" href="'.$facebookURL.'" target="_blank">Facebook</a>';
+		$content .= '<a class="icon-google-with-circle" href="'.$googleURL.'" target="_blank">Google+</a>';
+		$content .= '<a class="icon-pinterest-with-circle" href="'.$pinterestURL.'" target="_blank">Pin It</a>';
+
+		return $content;
+
+    } else {
+
+		return $content;
+	}
+}
+
+
 /*
 **	- - - - - - - - - - - - - - - - - - - - - -
 **	RETINA IMAGES GENERATOR
